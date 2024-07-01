@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Menu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        opacity: 1;
+        max-width: 100%;
+        margin-top: 50px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: rgb(140, 15, 237);
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      .box {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .card {
+        width: 300px;
+        margin: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .card-description {
+        margin-bottom: 15px;
+      }
+
+      .card-price {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .cart {
+        visibility: hidden;
+        width: 300px;
+        margin: 20px;
+        color: white;
+        background-color: #147ec4;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 45%;
+        left: 45%;
+
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .btn1 {
+        display: inline-block;
+        background-color: #35e71e;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        position: absolute;
+        right: 0px;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .aq {
+        visibility: visible;
+      }
+      .pq {
+        opacity: 0.1;
+      }
+      #total-price {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="menu"><h1>Hotel Menu...</h1></div>
+      <div><a href="#" class="btn1" id="cart-btn">View Cart</a></div>
+    </div>
+
+    <div class="container" id="container">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Deluxe Breakfast</h2>
+          <p class="card-description">
+            Scrambled eggs, bacon, sausage, hash browns, toast, and choice of
+            juice or coffee.
+          </p>
+          <p class="card-price">$12.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/954677/pexels-photo-954677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Breakfast</h2>
+          <p class="card-description">Paratha,Chai,Toast</p>
+          <p class="card-price">$9.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Normal Lunch</h2>
+          <p class="card-description">Roti,Sabji,Rice,Daal</p>
+          <p class="card-price">$7.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Chinese Breakfast</h2>
+          <p class="card-description">
+            Eggs, bacon, sausage, hash browns, toast, and choice of juice or
+            coffee.
+          </p>
+          <p class="card-price">$22.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Punjabi Breakfast</h2>
+          <p class="card-description">
+            Hash browns, toast, and choice of juice or coffee.
+          </p>
+          <p class="card-price">$20.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Banarasi Breakfast</h2>
+          <p class="card-description">
+            Sausage, hash browns, toast, and choice of juice or coffee.
+          </p>
+          <p class="card-price">$25.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Paratha</h2>
+          <p class="card-description">
+            Bacon, sausage, hash browns, toast, and choice of juice or coffee.
+          </p>
+          <p class="card-price">$10.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Lunch Special</h2>
+          <p class="card-description">
+            Grilled chicken sandwich with lettuce, tomato, and fries.
+          </p>
+          <p class="card-price">$25.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Non Veg</h2>
+          <p class="card-description">Grilled chicken and Mutton.</p>
+          <p class="card-price">$19.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="Food"
+        />
+        <div class="card-content">
+          <h2 class="card-title">Dinner Buffet</h2>
+          <p class="card-description">
+            Buffet with a variety of dishes including pasta, salad, grilled
+            meats, and desserts.
+          </p>
+          <p class="card-price">$20.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="cart" class="cart">
+      <h3>Cart Items</h3>
+      <ul id="cart-item-list"></ul>
+      <div id="total-price">Total Price: $0.00</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".btn");
+        const cartBtn = document.getElementById("cart-btn");
+        const cart = document.getElementById("cart");
+        let conatiner1 = document.getElementById("container");
+        const cartItemList = document.getElementById("cart-item-list");
+        const totalPrice = document.getElementById("total-price");
+
+        let cartItemsCount = 0;
+        const cartItems = [];
+
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            cartItemsCount++;
+            const cardTitle =
+              this.parentElement.querySelector(".card-title").textContent;
+            const cardPrice =
+              this.parentElement.querySelector(".card-price").textContent;
+            cartItems.push({ title: cardTitle, price: cardPrice });
+            updateCartButtonText(cartItemsCount);
+          });
+        });
+
+        cartBtn.addEventListener("click", function () {
+          renderCartItems();
+        });
+
+        function updateCartButtonText(count) {
+          cartBtn.textContent = `View Cart (${count})`;
+        }
+
+        cartBtn.addEventListener("click", function () {
+          cart.classList.add("aq");
+          conatiner1.classList.add("pq");
+        });
+
+        function calculateTotalPrice() {
+          const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+          totalPrice.textContent = `Total Price: $${total.toFixed(2)}`;
+        }
+
+        function renderCartItems() {
+          cartItemList.innerHTML = "";
+          cartItems.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.title} - ${item.price}`;
+            li.classList.add("cart-item");
+            cartItemList.appendChild(li);
+          });
+          cart.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
