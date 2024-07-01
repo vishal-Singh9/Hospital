@@ -87,7 +87,6 @@
         position: absolute;
         top: 45%;
         left: 45%;
-
         border: 1px solid #ccc;
         border-radius: 8px;
         overflow: hidden;
@@ -307,23 +306,22 @@
               this.parentElement.querySelector(".card-title").textContent;
             const cardPrice =
               this.parentElement.querySelector(".card-price").textContent;
-            cartItems.push({ title: cardTitle, price: cardPrice });
+            const numericPrice = parseFloat(cardPrice.replace('$', ''));
+            cartItems.push({ title: cardTitle, price: numericPrice });
             updateCartButtonText(cartItemsCount);
+            calculateTotalPrice(); // Update total price after adding an item
           });
         });
 
         cartBtn.addEventListener("click", function () {
           renderCartItems();
+          cart.classList.add("aq");
+          conatiner1.classList.add("pq");
         });
 
         function updateCartButtonText(count) {
           cartBtn.textContent = `View Cart (${count})`;
         }
-
-        cartBtn.addEventListener("click", function () {
-          cart.classList.add("aq");
-          conatiner1.classList.add("pq");
-        });
 
         function calculateTotalPrice() {
           const total = cartItems.reduce((acc, item) => acc + item.price, 0);
@@ -334,7 +332,7 @@
           cartItemList.innerHTML = "";
           cartItems.forEach((item) => {
             const li = document.createElement("li");
-            li.textContent = `${item.title} - ${item.price}`;
+            li.textContent = `${item.title} - $${item.price.toFixed(2)}`;
             li.classList.add("cart-item");
             cartItemList.appendChild(li);
           });
@@ -344,3 +342,4 @@
     </script>
   </body>
 </html>
+
